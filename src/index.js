@@ -2,9 +2,9 @@
 // best Appraoch
 import dotenv from "dotenv"
 import connectDB from './db/index.js';
+import { app } from './app.js'
 
-
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 9000
 
 dotenv.config({
     path: './.env'
