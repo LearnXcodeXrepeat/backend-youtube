@@ -52,7 +52,6 @@ const userSchema = new Schema(
     }
 )
 //dont use arrow function bcz ()=>{} doesnt have this access in it
-
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next()
 
