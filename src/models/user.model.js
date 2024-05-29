@@ -53,11 +53,10 @@ const userSchema = new Schema(
 )
 //dont use arrow function bcz ()=>{} doesnt have this access in it
 userSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) return next()
+    if (!this.isModified("password")) return next();
 
-
-    this.password = bcrypt.hash(this.password, 10)
-    next();
+    this.password = await bcrypt.hash(this.password, 10)
+    next()
 })
 
 
